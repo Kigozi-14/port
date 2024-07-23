@@ -12,7 +12,7 @@ migrate = Migrate(app, db)
 
 from app import routes, models
 
-if not app.debug:
+if not app.debug: 
     stream_handler = logging.StreamHandler()
     stream_handler.setLevel(logging.INFO)
     app.logger.addHandler(stream_handler)
