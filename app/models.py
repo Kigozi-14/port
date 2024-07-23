@@ -8,7 +8,7 @@ class my_posts(db.Model):
     description = db.Column(db.String(200))
     photo = db.Column(db.LargeBinary)
 
-    # def __init__(self, date, description, photo):
-    #     self.date = date
-    #     self.description = description
-    #     self.photo = photo
+    def __init__(self, date, description, photo):
+        self.date = date
+        self.description = description
+        self.photo = photo
