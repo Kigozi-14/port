@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from app import app, db
 from leetcode_progress import my_data
-from models import my_posts
+from app.models import my_posts
 import base64
 
 
