@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post_page</title>
+</head>
+<body>
+
+    {% if message %}
+        <h2><p class="message">{{ message | safe }}</p></h2>
+    {% endif %}
+    
+    <form method="POST" action="/submit" enctype="multipart/form-data">
+        <label><h3>FOR MY BLOG POSTS</h3></label>
+        <input type="text" id="currentDate" name="currentDate" readonly>
+        <input type="text" name="description" placeholder="Description" required/>
+        <input type="file" id="image_file" name="image_file" placeholder="Upload Image Here" required/>
+        <input type="password" name="password" placeholder="password" required/>
+        <ul class="actions">
+            <li><input type="submit" value="Send Message" /></li>
+            <li><input type="reset" value="Clear Form" class="alt" /></li>
+        </ul>
+    </form>
+
+    <form method="POST" action="/delete" enctype="multipart/form-data">
+        <label><h3>FOR DELETING A POST</h3></label>
+        <input type="number" name="to_delete" placeholder="delete id" required><br><br>
+        <input type="password" name="password" placeholder="password" required/>
+        <ul class="actions">
+            <li><input type="submit" value="Send Message" /></li>
+            <li><input type="reset" value="Clear Form" class="alt" /></li>
+        </ul>
+    </form>
+
+    <script>
+        const currentDate = new Date().toISOString().slice(0, 10);
+        document.getElementById('currentDate').value = currentDate;
+
+        // function image_checking() {
+        //     var file_arr = ['jpg', 'png', 'PNG', 'JPG'];
+        //     let x = document.getElementById('image_file').value.slice(-3);
+        //     let text;
+        //     if (x == 'jpg' || x == 'png' || x == 'PNG' || x == 'JPG'){
+        //         text = 'IMAGE TYPE NOT VALID';
+        //     }else{
+        //         text = 'IMAGE TYPE VALID';
+        //     }
+        //     document.getElementById('image_message').innerHTML = text;
+        // }
+    </script>
+
+</body>
+</html>
