@@ -28,7 +28,7 @@ def password_checking(password):
 # ROUTE FOR OUR HOME PAGE (THE LANDING)
 @app.route('/')
 def home():
-    posts = my_posts.query.all()
+    posts = my_posts.query.order_by(my_posts.timestamp.desc()).limit(5).all()
     for post in posts:
         if post.photo:
             post.photo = base64.b64encode(post.photo).decode('utf-8')
