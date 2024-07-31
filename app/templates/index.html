@@ -132,7 +132,7 @@
 
         <div class="row d-flex">
             {% if posts %}
-                {% for post in posts %}
+                {% for post in posts[:2] %}
                     <div class="col-md-4 d-flex ftco-animate">
                         <div class="blog-entry justify-content-end">
                             {% if post.photo %}
